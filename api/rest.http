@@ -1,0 +1,40 @@
+### live server test
+GET http://localhost:8000
+
+# ========= Admin registraion and login
+
+### Admin user registration
+POST http://localhost:8000/api/v1/register-login
+Content-Type: application/json
+
+{
+    "fName": "Aavas",
+    "lName": "Kunwar",
+    "dob":  "2020-02-20",
+    "phone":"044444444",
+    "email" : "a@a.com",
+    "password": "123456",
+    "address": "somewhere in sydeny"
+}
+
+
+### Admin user registration
+PATCH http://localhost:8000/api/v1/register-login
+Content-Type: application/json
+
+{
+    "email" : "garry@gmail.com",
+    "verificationCode" : "b264bf3c-d350-4806-bbfa-d17c0d1b1fd3"
+}
+
+# http://localhost:3000/admin-verification?e=dented@gmail.com&c=90a947e8-5218-43e0-9425-bdd1f298e6e0
+
+### Admin login
+POST http://localhost:8000/api/v1/register-login/login
+Content-Type: application/json
+
+{
+    "email" : "a@a.com",
+    "password": "123456",
+
+}
